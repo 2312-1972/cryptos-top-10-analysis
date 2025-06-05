@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard d'Analyse Cryptomonnaies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-800">Dashboard d'Analyse Cryptomonnaies</h1>
+                    <p class="text-sm text-gray-500">Exploration du Top 10 (Données Simulées)</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm font-medium">Crypto :</span>
+                    <select id="cryptoSelector" class="rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <section id="context" class="mb-12">
+            <h2 class="text-xl font-semibold text-gray-700 section-title">Aperçu du Marché Crypto</h2>
+            <p class="text-gray-600 mb-6">Le marché des cryptomonnaies est connu pour sa dynamique unique. Cette section met en lumière certains aspects clés à considérer pour l'analyse.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-5 rounded-lg shadow metric-card">
+                    <h3 class="font-semibold text-lg">Haute Volatilité</h3>
+                    <p class="text-gray-600 text-sm mt-1">Les prix peuvent fluctuer de manière significative et rapide.</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow metric-card">
+                    <h3 class="font-semibold text-lg">Paysage Réglementaire</h3>
+                    <p class="text-gray-600 text-sm mt-1">Les nouvelles réglementations peuvent impacter fortement le marché.</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow metric-card">
+                    <h3 class="font-semibold text-lg">Innovation Constante</h3>
+                    <p class="text-gray-600 text-sm mt-1">De nouveaux projets et technologies émergent régulièrement.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="cryptoInfo" class="mb-12 bg-white p-6 rounded-lg shadow">
+            <div class="flex items-center mb-4">
+                <div id="cryptoLogo" class="crypto-logo-placeholder"></div>
+                <h2 id="cryptoNameAndSymbol" class="text-2xl font-bold text-gray-800"></h2>
+            </div>
+            <p id="cryptoDescription" class="text-gray-600 mb-4 text-sm"></p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div>
+                    <span class="text-gray-500 block">Capitalisation (Simulée)</span>
+                    <span id="cryptoMarketCap" class="font-semibold text-lg"></span>
+                </div>
+                <div>
+                    <span class="text-gray-500 block">Volume 24h (Simulé)</span>
+                    <span id="cryptoVolume" class="font-semibold text-lg"></span>
+                </div>
+                <div>
+                    <span class="text-gray-500 block">Offre en Circulation (Simulée)</span>
+                    <span id="cryptoCirculatingSupply" class="font-semibold text-lg"></span>
+                </div>
+                 <div>
+                    <span class="text-gray-500 block">Rang (Exemple)</span>
+                    <span id="cryptoRank" class="font-semibold text-lg"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="analysis" class="mb-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow">
+                     <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-semibold text-gray-700">Analyse du Cours</h2>
+                        <div>
+                            <button id="toggleSma20Crypto" class="text-sm px-3 py-1 rounded-full border border-gray-300">SMA 20</button>
+                            <button id="toggleSma50Crypto" class="text-sm px-3 py-1 rounded-full border border-gray-300 ml-2">SMA 50</button>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Visualisez le cours de la cryptomonnaie sélectionnée et superposez des moyennes mobiles pour identifier les tendances.</p>
+                    <div class="chart-container">
+                        <canvas id="priceChartCrypto"></canvas>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div id="outlookCard" class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="font-semibold text-lg text-gray-700 mb-2">Perspective de Tendance (Simulée)</h3>
+                        <div class="text-center">
+                            <p id="outlookSignal" class="text-3xl font-bold"></p>
+                            <p id="outlookConfidence" class="text-sm text-gray-500"></p>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-4">Cette perspective est basée sur des indicateurs techniques simulés et ne constitue pas un conseil financier.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="font-semibold text-gray-700 mb-2">Indicateur RSI (14j)</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Le RSI aide à évaluer si une cryptomonnaie est potentiellement surachetée ou survendue.</p>
+                        <div class="small-chart-container">
+                            <canvas id="rsiChartCrypto"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <footer class="bg-white mt-12 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+                <p>Les données de ce dashboard sont simulées à des fins de démonstration et ne doivent pas être utilisées pour des décisions d'investissement réelles. Le marché des cryptomonnaies est extrêmement volatil.</p>
+            </div>
+        </footer>
+
+
+
+</body>
+</html>
