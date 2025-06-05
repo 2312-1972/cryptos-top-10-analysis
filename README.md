@@ -17,39 +17,40 @@ Ce dépôt a pour but d’analyser les **10 cryptos les plus influentes de 2025*
 
 ---
 
-## 💎 Contenu
+## 📈 Crypto Watchlist 2025  
+*Données officielles selon [CoinMarketCap](https://coinmarketcap.com) — Juin 2025*
 
-- `data/` — Données brutes issues d’API (CoinGecko, Messari, etc.)
-- `notebooks/` — Notebooks Jupyter pour exploration & visualisations
+| Rang | Nom         | Symbole | Prix (USD)     | Cap. de marché (USD)        |
+|------|-------------|---------|----------------|------------------------------|
+| 1    | Bitcoin     | BTC     | $104 477,03     | $2 076 451 689 673           |
+| 2    | Ethereum    | ETH     | $2 592,94       | $313 027 476 461             |
+| 3    | Tether      | USDT    | $1,00           | $153 836 091 308             |
+| 4    | XRP         | XRP     | $2,20           | $129 422 383 142             |
+| 5    | BNB         | BNB     | $659,87         | $92 968 021 880              |
+| 6    | Solana      | SOL     | $151,04         | $79 160 680 070              |
+| 7    | USD Coin    | USDC    | $0,9995         | $61 474 423 605              |
+| 8    | Dogecoin    | DOGE    | $0,1897         | $28 381 469 398              |
+| 9    | TRON        | TRX     | $0,2735         | $25 947 731 849              |
+| 10   | Cardano     | ADA     | $0,6751         | $23 861 995 036              |
+
+---
+
+## 💎 Contenu du dépôt
+
+- `data/` — Données brutes issues d’API (Yahoo finance, CoinMarketCap…)
+- `notebooks/` — Jupyter Notebooks d’exploration
 - `models/` — Scripts d’analyse prédictive
-- `reports/` — Rapports synthétiques mensuels
-- `dashboard/` — Mini dashboard interactif avec Streamlit (facultatif)
+- `reports/` — Résumés & analyses mensuelles
+- `dashboard/` — Interface Streamlit (optionnelle)
 
 ---
 
-## 📈 Crypto watchlist 2025 (par capitalisation + potentiel)
+## 🛠️ Stack technique
 
-| Rang | Nom        | Symbole | Focus          |
-|------|------------|---------|----------------|
-| 1    | Bitcoin    | BTC     | Store of Value |
-| 2    | Ethereum   | ETH     | Smart Contracts |
-| 3    | Solana     | SOL     | DeFi & Speed   |
-| 4    | Toncoin    | TON     | Télégram-link  |
-| 5    | Avalanche  | AVAX    | Modular Chains |
-| 6    | Chainlink  | LINK    | Oracle leader  |
-| 7    | Polygon    | MATIC   | L2 Scaling     |
-| 8    | Injective  | INJ     | DeFi infra     |
-| 9    | Near       | NEAR    | AI-integrated  |
-| 10   | PepeCoin   | PEPE    | Mème ou miracle ? 🐸 |
-
----
-
-## 🛠️ Technologies utilisées
-
-- Python, Pandas, Matplotlib, Plotly
-- Scikit-learn (pour les modèles simples)
-- Streamlit (si dashboard activé)
-- APIs : CoinGecko, CryptoCompare, Glassnode, etc.
+- Python, Pandas, Plotly, Scikit-learn
+- Jupyter Lab / VS Code
+- CoinMarketCap API, CoinGecko API
+- Streamlit (pour dashboard interactif)
 
 ---
 
@@ -57,34 +58,13 @@ Ce dépôt a pour but d’analyser les **10 cryptos les plus influentes de 2025*
 
 > « Dans un monde de spéculation, l’analyse est une arme. »
 
-Ce projet est né d’une envie de mêler **passion crypto** et **rigueur data science**, pour aller **au-delà du hype**.
+Nous visons à combiner **rigueur des données** et **passion crypto** pour comprendre ce qui différencie les leaders du marché crypto en 2025.
 
 ---
 
-## 🙌 Contribuer
+## 📡 API dynamique (facultatif)
 
-1. Fork le repo
-2. Crée une branche `analyse-altcoin-X`
-3. Propose un Pull Request avec ton ajout d’analyse
-4. Tu seras crédité dans la section Contributors 🚀
+📌 Tu peux activer la mise à jour auto des données via un script :
 
----
-
-## 📫 Contact
-
-Créé avec ❤️ par [TonNom ou Pseudo]
-
-Twitter/X : [@TonHandle]  
-Email : [ton.email@example.com]
-
----
-
-## 📜 Licence
-
-[MIT](LICENSE)
-
----
-
-> *Ce dépôt est à visée éducative et informative. Il ne constitue en aucun cas un conseil financier.*
-
-
+```bash
+python scripts/update_top10.py
