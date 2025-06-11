@@ -18,7 +18,8 @@ Ce dépôt a pour but d’analyser les **10 cryptos les plus influentes de 2025*
 ---
 
 ## 📈 Crypto Watchlist 2025  
-*Données officielles selon [CoinMarketCap](https://coinmarketcap.com) — Juin 2025*
+*Données officielles selon [CoinMarketCap](https://coinmarketcap.com) — 02 Juin 2025*
+*A actualiser chaque semaine!!!*
 
 | Rang | Nom         | Symbole | Prix (USD)     | Cap. de marché (USD)        |
 |------|-------------|---------|----------------|------------------------------|
@@ -41,16 +42,16 @@ Ce dépôt a pour but d’analyser les **10 cryptos les plus influentes de 2025*
 - `notebooks/` — Jupyter Notebooks d’exploration
 - `models/` — Scripts d’analyse prédictive
 - `reports/` — Résumés & analyses mensuelles
-- `dashboard/` — Interface Streamlit (optionnelle)
+
 
 ---
 
 ## 🛠️ Stack technique
 
 - Python, Pandas, Plotly, Scikit-learn
-- Jupyter Lab / VS Code
-- CoinMarketCap API, CoinGecko API
-- Streamlit (pour dashboard interactif)
+- VS Code
+- CoinMarketCap API, CoinGecko API, Polygon API.
+
 
 ---
 
@@ -58,13 +59,13 @@ Ce dépôt a pour but d’analyser les **10 cryptos les plus influentes de 2025*
 
 > « Dans un monde de spéculation, l’analyse est une arme. »
 
-Nous visons à combiner **rigueur des données** et **passion crypto** pour comprendre ce qui différencie les leaders du marché crypto en 2025.
+Je vise à combiner **rigueur des données** et **passion crypto** pour comprendre ce qui différencie les leaders du marché crypto en 2025.
 
 ---
 
-## 📡 API dynamique (facultatif)
+## 📡 API dynamique (a définir )
 
-📌 Tu peux activer la mise à jour auto des données via un script :
+📌 selon script :
 
 ```bash
 python scripts/update_top10.py
